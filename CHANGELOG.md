@@ -12,6 +12,8 @@
 
 ### Bug Fixes
 
+- fix: |CI| 后端 deploy workflow 在缺少 `CLOUDFLARE_ACCOUNT_ID` / `CLOUDFLARE_API_TOKEN` / `BACKEND_TOML` secrets 时跳过部署并给出提示，避免因未配置密钥导致任务直接失败
+
 ### Improvements
 
 - fix: |Worker| 地址活跃时间保活增加 1 天写入窗口，用户设置和邮箱访问不再重复更新近期活跃地址，降低 D1 写入量（issue #1103）

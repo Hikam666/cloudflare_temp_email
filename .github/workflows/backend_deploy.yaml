@@ -34,6 +34,14 @@ jobs:
         run: |
           export use_worker_assets=${{ secrets.USE_WORKER_ASSETS }}
           export use_worker_assets_with_telegram=${{ secrets.USE_WORKER_ASSETS_WITH_TELEGRAM }}
+          export cloudflare_account_id=${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          export cloudflare_api_token=${{ secrets.CLOUDFLARE_API_TOKEN }}
+          export wrangler_toml_content=${{ secrets.BACKEND_TOML }}
+
+          if [ -z "$cloudflare_account_id" ] || [ -z "$cloudflare_api_token" ] || [ -z "$wrangler_toml_content" ]; then
+            echo "Skipping deploy: required Cloudflare secrets are not configured."
+            exit 0
+          fi
           
           if [ -n "$use_worker_assets" ]; then
             cd frontend/
