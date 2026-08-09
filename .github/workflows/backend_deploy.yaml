@@ -11,6 +11,7 @@ on:
 
 jobs:
   deploy:
+    if: ${{ secrets.CLOUDFLARE_ACCOUNT_ID != '' && secrets.CLOUDFLARE_API_TOKEN != '' && secrets.BACKEND_TOML != '' }}
     runs-on: ubuntu-latest
     permissions:
       contents: write

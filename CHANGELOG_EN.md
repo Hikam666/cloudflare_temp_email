@@ -12,6 +12,8 @@
 
 ### Bug Fixes
 
+- fix: |CI| Skip the `backend_deploy` workflow deploy job when required Cloudflare deployment secrets are missing, preventing failures on manual or sync-triggered runs with empty credentials
+
 ### Improvements
 
 - fix: |Worker| Throttle address-activity touches to one write per day so user settings and mailbox access do not repeatedly update recently active addresses, reducing D1 writes (issue #1103)

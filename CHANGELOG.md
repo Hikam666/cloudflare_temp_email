@@ -12,6 +12,8 @@
 
 ### Bug Fixes
 
+- fix: |CI| `backend_deploy` 工作流在未配置 Cloudflare 部署 secrets 时自动跳过 deploy job，避免手动触发或同步触发时因空凭据导致失败
+
 ### Improvements
 
 - fix: |Worker| 地址活跃时间保活增加 1 天写入窗口，用户设置和邮箱访问不再重复更新近期活跃地址，降低 D1 写入量（issue #1103）
