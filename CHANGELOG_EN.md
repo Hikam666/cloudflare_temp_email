@@ -12,6 +12,8 @@
 
 ### Bug Fixes
 
+- fix: |CI| Make the backend deploy workflow skip deployment with a clear message when `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_API_TOKEN`, or `BACKEND_TOML` secrets are missing, instead of failing the job
+
 ### Improvements
 
 - fix: |Worker| Throttle address-activity touches to one write per day so user settings and mailbox access do not repeatedly update recently active addresses, reducing D1 writes (issue #1103)
